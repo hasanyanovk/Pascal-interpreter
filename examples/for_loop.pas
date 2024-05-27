@@ -1,6 +1,6 @@
 program example2;
 const
-    part :double = 2.1;
+    part :double = 1.4;
 var
     i: integer;
     res: double;

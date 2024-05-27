@@ -2,7 +2,7 @@
 #define PASCAL_PARSER_H
 #include<string>
 
-class Interpretator {
+class Runtime {
 public:
 	static void run(const std::string& infix);
 };

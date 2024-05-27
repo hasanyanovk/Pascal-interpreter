@@ -10,7 +10,7 @@
 using namespace antlr4;
 using namespace ANTLRPascalParser;
 
-void ::Interpretator::run(const std::string& infix) {
+void ::Runtime::run(const std::string& infix) {
 	ANTLRInputStream input(infix);
 	PascalLexer lexer(&input);
 	CommonTokenStream tokens(&lexer);

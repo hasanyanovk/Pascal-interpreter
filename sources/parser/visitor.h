@@ -3,6 +3,7 @@
 
 #include "value.h"
 #include "exceptions.h"
+#include "pascal_parser.h"
 #include <PascalParserBaseVisitor.h>
 
 

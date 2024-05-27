@@ -11,54 +11,44 @@ protected:
     string info;
 
 public:
-	explicit base_exception(const string& fileName = "Undeclared file", const string& className = "Undeclared  class"
-		,int numLine = -1, const string& erInfo = "Undeclared error")
-            : info("File: " + fileName + "\n"
-                   + "Class: " + className + "\n"
-                   + "Line: " + to_string(numLine) + "\n"
-                   + "Error: " + erInfo + "\n") {}
+	explicit base_exception(const string& fileName = "Undeclared file"
+			, const string& className = "Undeclared  class"
+			, int numLine = -1
+			, const string& erInfo = "Undeclared error");
 
-    [[nodiscard]] char const* what() const override { return info.c_str(); }
+    [[nodiscard]] char const* what() const override;
 
     ~base_exception() override = default;
-
 };
 
 class invalid_size : public base_exception {
 public:
-    invalid_size(const string& fileName, const string& className, int numLine,
-                 const string& erInfo = "Invalid size")
-            : base_exception(fileName, className, numLine, erInfo) {}
+	invalid_size(const string& fileName, const string& className, int numLine,
+				 const string& erInfo = "Invalid size");
 };
 
 class empty_container : public base_exception {
 public:
-    empty_container(const string& fileName, const string& className, int numLine,
-                    const string& erInfo = "Container is empty")
-            : base_exception(fileName, className, numLine, erInfo) {}
+	empty_container(const string& fileName, const string& className, int numLine,
+					const string& erInfo = "Container is empty");
 };
-
 
 class bad_allocate : public base_exception {
 public:
-    bad_allocate(const string& fileName, const string& className, int numLine,
-                 const string& erInfo = "Can`t allocate memory")
-            : base_exception(fileName, className, numLine, erInfo) {}
+	bad_allocate(const string& fileName, const string& className, int numLine,
+				 const string& erInfo = "Can`t allocate memory");
 };
 
 class key_error : public base_exception {
 public:
 	key_error(const string& fileName, const string& className, int numLine,
-	             const string& erInfo = "Key error")
-			: base_exception(fileName, className, numLine, erInfo) {}
+			  const string& erInfo = "Key error");
 };
 
 class parse_error :  public base_exception{
 public:
 	parse_error(const string& fileName, const string& className, int numLine,
-			  const string& erInfo = "Key error")
-			: base_exception(fileName, className, numLine, erInfo) {}
+				const string& erInfo = "Parse error");
 };
-
 
 #endif
